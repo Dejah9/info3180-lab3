@@ -1,6 +1,13 @@
 {% extends "base.html" %}
 
 {% block main %}
+{% with messages = get_flashed_messages() %}
+  {% if messages %}
+    <ul class=flashes>
+      <li class="{{ category }}">{{ messages }}</li>
+    </ul>
+  {% endif %}
+{% endwith %}
 <h1>Flask Starter Code</h1>
 <p class="lead">Use this starter template for your Flask apps as a way to quickly start any new project.<br>
 All you get are these files and mostly barebones HTML/CSS files.</p>
